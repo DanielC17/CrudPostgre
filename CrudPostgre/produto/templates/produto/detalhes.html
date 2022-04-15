@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>{{produto.nome}}</h1>
+    
+    <p>Descrição: {{produto.descricao}}</p>
+    <p>Quantidade em estoque: {{produto.quantidade}}</p>
+    <h1>Preço: R${{produto.preco}}</h1>
+
+    <button><a href="{% url 'produtos' %}">Voltar</a></button>
+    <button><a href="{% url 'edit' produto.id %}">Editar</a></button>
+    <button><a href="{% url 'delete' produto.id %}">Excluir</a></button>
+    
+{% endblock %}

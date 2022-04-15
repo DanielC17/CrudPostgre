@@ -1,0 +1,16 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Produtos</h2>
+    <button><a href="{% url 'adicionar' %}">Adicionar</a></button>
+    <ul>
+        <p>
+        {% for produto in lista_produto %}
+            <li><h3>{{produto.nome}} - {{produto.descricao}}</h3></li>
+
+            <button><a href="{% url 'detalhes' produto.id %}">Ver Detalhes</a></button>
+            <hr>
+        {% endfor %}
+    </ul>
+{% endblock %}
